@@ -1,7 +1,7 @@
 let qtdCartas = 0;
 let gifs = ["bobrossparrot.gif","explodyparrot.gif","fiestaparrot.gif","metalparrot.gif","revertitparrot.gif","tripletsparrot.gif","unicornparrot.gif"];
-let gifsDuplicados = duplicarArray();
-let gifsEmbaralhados = gifsDuplicados.sort(comparador);
+gifs.sort(comparador);
+
 liberarJogo();
 inserirCartas();
 function liberarJogo(){
@@ -12,26 +12,27 @@ function liberarJogo(){
 
 }
 
-function duplicarArray(){
-    let gifsDuplicated = [];
-    for(let i =0; i < gifs.length;i++){
-        gifsDuplicated[i] = gifs[i] 
-    }
-    let gifsConcat = gifs.concat(gifsDuplicated);
-    return gifsConcat;
-}
 function comparador() { 
 	return Math.random() - 0.5; 
 }
 
+
 function inserirCartas(){
+
     let inserir = "";
+    let gifsExibir = [];
     const cartasDiv = document.querySelector(".cartas");
-    console.log(cartasDiv);
-    for(let i = 0; i < qtdCartas;i++){
-    inserir = inserir  + `<div class="carta"><img src="css/img/${gifsEmbaralhados[i]}"></div>`
-    }   
-    cartasDiv.innerHTML = inserir;
+    for(let i =0; i < (qtdCartas/2); i++){
+        gifsExibir.push(gifs[i]);
+        gifsExibir.push(gifs[i]);
+    }
+    gifsExibir.sort(comparador);
+
+   for(let i = 0; i < qtdCartas;i++){
+   inserir = inserir  + `<div class="carta"><img src="css/img/${gifsExibir[i]}"></div>`
+   }  
+    
+   cartasDiv.innerHTML = inserir;
 }
 
 
