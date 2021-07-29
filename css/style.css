@@ -33,6 +33,10 @@ body{
 }
 .carta{
     background-color: #A7E9AF;
+    background-image: url(/css/img/front.png);
+    background-size:100px;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 117px;
     height: 146px;
     border: 1px solid #99CEA8;
@@ -45,11 +49,6 @@ body{
     align-items: center;
 }
 
-.carta img {
-    width: 100px;
-    height: 100px;
-
-}
 
 
 
