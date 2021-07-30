@@ -1,6 +1,7 @@
 let qtdCartas = 0;
 let gifs = ["bobrossparrot.gif","explodyparrot.gif","fiestaparrot.gif","metalparrot.gif","revertitparrot.gif","tripletsparrot.gif","unicornparrot.gif"];
 gifs.sort(comparador);
+let cartasMarcadas = 0;
 
 liberarJogo();
 inserirCartas();
@@ -29,11 +30,18 @@ function inserirCartas(){
     gifsExibir.sort(comparador);
 
    for(let i = 0; i < qtdCartas;i++){
-   inserir = inserir  + `<div class="carta"><img src="css/img/${gifsExibir[i]}"></div>`
+   inserir = inserir  + `<div class="card" onClick="virarCarta(this)">
+                        <div class="front-face face"><img src="css/img/front.png" class="fundo"></div>
+                        <div class="back-face face"><img src="css/img/${gifsExibir[i]}" class="gif"></div>
+                        </div>`
    }  
     
    cartasDiv.innerHTML = inserir;
+
 }
 
+function virarCarta(carta){
 
+    carta.classList.add("is-flipped");
+}
 
