@@ -50,7 +50,7 @@ body{
     margin-right: 30px;
     margin-top: 30px;
     transform-style: preserve-3d;
-    transition: transform 1s;
+    transition: transform 0.5s;
   }
 .card.is-flipped{
     transform: rotateY(180deg);
