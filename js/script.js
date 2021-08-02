@@ -88,7 +88,7 @@ function verificarVitoria(){
     }
    if (acertos == cartas.length){
        setTimeout(function(){
-        alert("Você Venceu !!!!!!!!");
+        alert("Você Venceu em " + cliques + " jogadas");
        },1000);
    }
 
